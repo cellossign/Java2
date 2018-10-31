@@ -7,8 +7,13 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         boolean wantToContinue = true;
 
-        AddProductView addProductView = new AddProductView();
-        RemoveProductView removeProductView = new RemoveProductView();
+        AddProductService a = new AddProductService();
+        AddProductView addProductView = new AddProductView(a);
+
+        RemoveProductService r = new RemoveProductService();
+        RemoveProductView removeProductView = new RemoveProductView(r);
+
+
         ShowProductsView showProductsView = new ShowProductsView();
 
         while (wantToContinue == true) {
