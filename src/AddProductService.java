@@ -12,6 +12,6 @@ public class AddProductService {
         Product product = new Product();
         product.name = name;
 
-        db.addProduct(product);//sozdannij produkt dobavili v bazu dannih
+        db.addProduct(product);//sozdannij produkt otpravili v bazu dannih
     }
 }

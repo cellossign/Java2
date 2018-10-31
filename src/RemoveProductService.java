@@ -2,9 +2,23 @@ import java.util.ArrayList;
 
 public class RemoveProductService {
 
+    private Database db;
 
-    public void remove(ArrayList<Product> ProductList, String name) {
+    public RemoveProductService (Database db){
+        this.db=db;
+    }
 
-        ProductList.remove(ProductList.indexOf(name)); //indeks nepraviljnij
+    public void remove(String name) {
+
+        for (Product product : db.productList) {
+            if ((product.name).equals(name)) {
+                db.deleteProduct(product);
+            }
+            ;
+        }
+
+
+
+
     }
 }

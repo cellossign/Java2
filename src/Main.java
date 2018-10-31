@@ -13,7 +13,7 @@ public class Main {
         AddProductService a = new AddProductService(db);
         AddProductView addProductView = new AddProductView(a);
 
-        RemoveProductService r = new RemoveProductService();
+        RemoveProductService r = new RemoveProductService(db);
         RemoveProductView removeProductView = new RemoveProductView(r);
 
 
@@ -28,7 +28,7 @@ public class Main {
                 wantToContinue = true;
             }
             if (choice.equals("2")) {
-                removeProductView.execute(ProductList);
+                removeProductView.execute();
                 wantToContinue = true;
                 //remove(name);
             }

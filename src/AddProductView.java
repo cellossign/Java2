@@ -14,7 +14,7 @@ public class AddProductView {
         System.out.println("Enter name");
         Scanner sc = new Scanner(System.in);
         String name = sc.nextLine();
-        addProductService.add(name);
+        addProductService.add(name);// vzjatoe imja otpravili v sozdanije produkta
         //add(ProductList,name);
     }
 
