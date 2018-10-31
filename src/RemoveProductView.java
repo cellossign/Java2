@@ -9,12 +9,12 @@ public class RemoveProductView {
         this.removeProductService = removeProductService;
     }
 
-    public void execute(ArrayList<String> toDoList) {
+    public void execute(ArrayList<Product> ProductList) {
         System.out.println("Enter name");
         Scanner sc = new Scanner(System.in);
         String name = sc.nextLine();
-        System.out.println("The index of this item is: " + toDoList.lastIndexOf(name));
-        removeProductService.remove(toDoList, name);
+        System.out.println("The index of this item is: " + ProductList.lastIndexOf(name));
+        removeProductService.remove(ProductList, name);
     }
 //
 //    public void remove(ArrayList<String> toDoList, String name) {

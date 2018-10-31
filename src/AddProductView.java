@@ -10,12 +10,12 @@ public class AddProductView {
 
     }
 
-    public void execute(ArrayList<String> toDoList) {
+    public void execute() {
         System.out.println("Enter name");
         Scanner sc = new Scanner(System.in);
         String name = sc.nextLine();
-        addProductService.add(toDoList, name);
-        //add(toDoList,name);
+        addProductService.add(name);
+        //add(ProductList,name);
     }
 
 //    private void add(ArrayList<String> toDoList, String name) {

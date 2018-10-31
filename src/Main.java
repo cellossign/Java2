@@ -2,12 +2,15 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        //toDoList=createList();
-        ArrayList<String> toDoList = new ArrayList<String>();
+        //ProductList=createList();
+        //ArrayList<Product> ProductList = new ArrayList<Product>();
+
         Scanner sc = new Scanner(System.in);
         boolean wantToContinue = true;
 
-        AddProductService a = new AddProductService();
+        Database db=new InMemoryDB();
+
+        AddProductService a = new AddProductService(db);
         AddProductView addProductView = new AddProductView(a);
 
         RemoveProductService r = new RemoveProductService();
@@ -21,16 +24,16 @@ public class Main {
             String choice = sc.nextLine();
 
             if (choice.equals("1")) {
-                addProductView.execute(toDoList);
+                addProductView.execute();
                 wantToContinue = true;
             }
             if (choice.equals("2")) {
-                removeProductView.execute(toDoList);
+                removeProductView.execute(ProductList);
                 wantToContinue = true;
                 //remove(name);
             }
             if (choice.equals("3")) {
-                showProductsView.execute(toDoList);
+                showProductsView.execute(ProductList);
                 wantToContinue = true;
                 //showList();
             }

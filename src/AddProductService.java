@@ -2,7 +2,16 @@ import java.util.ArrayList;
 
 public class AddProductService {
 
-    public void add(ArrayList<String> toDoList, String name) {
-        toDoList.add(name);
+    private Database db;
+
+    public AddProductService(Database db) {
+        this.db = db;
+    }
+
+    public void add(String name) {
+        Product product = new Product();
+        product.name = name;
+
+        db.addProduct(product);//sozdannij produkt dobavili v bazu dannih
     }
 }
